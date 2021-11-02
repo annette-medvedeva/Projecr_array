@@ -133,31 +133,44 @@ public class Main {
             values[i] = rnd.nextInt(5);
         }
         System.out.println(Arrays.toString(values));
-        int max=0;
         int indexMax = values[0];
         for (int i = 0; i < values.length; i++) {
-            if (values[i]> indexMax) {
-                indexMax=values[i];
-                max=i;
-                values[max] = 0;
+            if (values[i] > indexMax) {
+                indexMax = values[i];
+            }
+        }
+        for (int i = 0; i < values.length; i++) {
+            if (values[i] == indexMax) {
+                values[i] = 0;
             }
         }
         System.out.println("\nМаксимальный элемент " + indexMax);
         System.out.println(Arrays.toString(values));
+
+
+        System.out.print("Исходный массив : ");
+
+        for (int i = 0; i < values.length; i++) {
+            values[i] = rnd.nextInt(5);
+        }
+        System.out.println(Arrays.toString(values));
+        int indexMin = 1;
+        for (int i = 1; i < values.length; i++) {
+            if (values[i]< values[indexMin]) {
+                indexMin = i;
+            }
+        }
+        for (int i = 0; i < values.length; i++) {
+            if (values[i] == indexMin) {
+                values[i] = 0;
+            }
+        }
+        System.out.println("\nминимальный элемент " + indexMin);
+        System.out.println(Arrays.toString(values));
     }
-//        for (int i = 0; i < values.length; i++) {
-//            values[i] = rnd.nextInt(50);
-//        }
-//        int indexMin = 0;
-//            for (int i = 1; i < values.length; i++) {
-//                if (values[i] <= values[indexMin]) {
-//                    indexMin = i;
-//                    System.out.println("\nМинимальный элемент  " + indexMin);
-//                    indexMin=0;
-//                    break;
-//                }
-//        }
 }
+
+
 
 
 
